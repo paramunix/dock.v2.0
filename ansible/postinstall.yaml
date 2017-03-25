@@ -1,0 +1,37 @@
+---
+- hosts: all
+  become: yes
+
+
+  tasks:
+    - copy:
+       src: /var/project/master-repo
+       dest: /etc/yum.repos.d/master.repo
+
+
+    - name: Yum Updater
+      command: yum -y update 
+
+
+    - name: pip install
+      yum: name=python-pip state=present
+
+
+
+    - name: Docker-py Install (needed for docker<--->ansible)
+      pip: name=docker-py state=present
+ 
+    - name: Docker Install
+      yum: name=docker state=present
+
+    - name: Install Nginx
+      docker:
+        name: nginx
+        image: nginx
+        detach: True
+        ports:
+            - 8080:8080
+        volumes:
+            - /var/project/conf/nginx.conf:/etc/nginx/nginx.conf:ro
+
+
