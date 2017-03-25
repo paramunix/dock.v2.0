@@ -2,10 +2,12 @@ ANSIBLE-> VAGRANT -> DOCKER -> NGINX
 -------------------------------------
 
 ------ WIP ------ ------ WIP ------
+
 Base OS: MacOSX Sierra
 
-The setup installs the required packages for MacOSX to spin instances from VirtualBox using Vagrant. Provisioning manager for these guests is Ansible.
- Thereafter, ansible playbooks are used to run a docker Nginx container inside the guest.
+The setup installs the required packages for MacOSX to spin instances from VirtualBox using Vagrant.
+Provisioning manager for these guests is Ansible.
+Thereafter, ansible playbooks are used to run a docker Nginx container inside the guest.
 
 a) Need to have Vagrant and Virtualbox installed.
 	https://www.vagrantup.com/downloads.html
