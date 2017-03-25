@@ -15,11 +15,14 @@ vagrant up virtualbox.box --provider virtualbox
 
 function check {
 	check vagrant status|grep -i running
-	if [ $? -eq  0 ]
+	chk1=$?
+	chk2=`vagrant ssh -c 'ls -l /etc/yum.repos.d'  default `
+	chk2=$?
+	if [[ chk1 -eq 0 ] && [ $chk2 -eq 0 ]]
 		then
-  			vagrant provision
+			vagrant provision
 		else
-  			sleep 10
+  			sleep 50
 	fi
 }
 
