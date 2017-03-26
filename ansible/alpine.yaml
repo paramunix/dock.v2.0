@@ -1,9 +1,0 @@
----
-- name: Build Docker images from Dockerfiles.
-
-  tasks:
-
-  - name: Yum Updater
-    command: echo "test" 
-
-
