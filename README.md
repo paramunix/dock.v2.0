@@ -12,6 +12,7 @@ Thereafter, ansible playbooks are used to run a docker Nginx container inside th
 
 
 a)   Install-macOSX.sh
+
         i) Installs Ansible on the Mac Host.
         ii) Installs the VM using Vagrant off of VirtualBox.
         iii) Calls for Provisioning of the VM.
@@ -23,6 +24,7 @@ a)   Install-macOSX.sh
 b)   Vagrantfile is configured to provision the VM using Ansible.
 
 c)   Ansible:
+
         i) Installs Docker on the vm.
         ii) Creates an alpine-linux+NginX container with configuration shared from host vm.
 
