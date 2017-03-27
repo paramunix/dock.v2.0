@@ -25,3 +25,5 @@
 
     - name: Start Docker engine
       service: name=docker state=started
+
+    - include: main.yaml

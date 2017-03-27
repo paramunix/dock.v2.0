@@ -14,19 +14,26 @@ wget https://atlas.hashicorp.com/centos/boxes/7/versions/1702.01/providers/virtu
 vagrant up virtualbox.box --provider virtualbox
 
 function check {
-	check vagrant status|grep -i running
+	vagrant status|grep -i running 
 	chk1=$?
-	chk2=`vagrant ssh -c 'ls -l /etc/yum.repos.d'  default `
+	vagrant ssh -c 'uname -a'  default
 	chk2=$?
 	if [[ chk1 -eq 0 ] && [ $chk2 -eq 0 ]]
 		then
 			vagrant provision
 		else
-  			sleep 50
+  			sleep 30
+
 	fi
 }
 
 check
+
+echo " Check the port mapping to connect to Nginx Site"
+echo "------------------------------"
+
+vagrant ssh -c 'docker ps'
+
 
 echo "----------------------"
 echo

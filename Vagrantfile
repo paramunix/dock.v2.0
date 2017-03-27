@@ -1,6 +1,3 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
@@ -11,32 +8,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-
-### Source ####
-  config.vm.box = "./centos7-x86.box"
-  config.vm.boot_timeout = 600
-  config.vm.network :private_network, ip: "192.168.33.10"
-
-### Customisation ####
-
-  config.vm.provider :virtualbox do |v|
-    v.name = "vag-vm"
-    v.memory = 1024
-    v.cpus = 1
-    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-  end
-
-
-### Ansible provisioning ####
-
-  config.vm.provision "ansible" do |ansible|
-  ansible.playbook = "ansible/postinstall.yaml"
-
-  end
-
-######            ####
-
-
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -141,4 +112,32 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # chef-validator, unless you changed the configuration.
   #
   #   chef.validation_client_name = "ORGNAME-validator"
+
+
+#----------------------------------------------------------
+
+### Source ####
+  config.vm.box = "./centos7-x86.box"
+  config.vm.boot_timeout = 600
+  config.vm.network :private_network, ip: "192.168.33.10"
+
+### Customisation ####
+
+  config.vm.provider :virtualbox do |v|
+    v.name = "vag-vm"
+    v.memory = 1024
+    v.cpus = 1
+    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+  end
+
+
+### Ansible provisioning ####
+
+  config.vm.provision "ansible" do |ansible|
+  ansible.playbook = "ansible/postinstall.yaml"
+
+  end
+
+#----------------------------------------------------------
+
 end
