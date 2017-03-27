@@ -1,3 +1,13 @@
+#Install-macOSX.sh
+# Installs Ansible on the Mac Host.
+#Installs the VM using Vagrant off of VirtualBox.
+#Calls for Provisioning of the VM.
+#(Need to install virtualbox extension packs of the same version)#
+#
+#Creater: Param Raina
+#GitHub : https://github.com/paramunix/dock/
+#
+#
 #!/bin/bash
 
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
