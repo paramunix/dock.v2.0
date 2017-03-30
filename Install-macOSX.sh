@@ -5,7 +5,6 @@
 #(Need to install virtualbox extension packs of the same version)#
 #
 #Creater: Param Raina
-#GitHub : https://github.com/paramunix/dock/
 #
 #
 #!/bin/bash
