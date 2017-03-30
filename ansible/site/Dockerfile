@@ -1,6 +1,10 @@
 FROM library/alpine:latest
 
-RUN apt-get install -y nginx
+RUN export PATH=$PATH:/sbin:/bin:/usr/sbin:/usr/bin
+RUN apk  update
+RUN apk add bash
+RUN cat /etc/*ease
+RUN apk  add  nginx
 ADD nginx.conf /etc/nginx/nginx.conf
 
 RUN mkdir -p /var/www/site
@@ -10,3 +14,4 @@ EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
 
+RUN apk info|grep -i nginx
