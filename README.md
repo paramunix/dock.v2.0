@@ -1,4 +1,4 @@
-ANSIBLE-> VAGRANT -> VirtualBOX -> CentOS -> DOCKER -> NGINX---1231
+ANSIBLE-> VAGRANT -> VirtualBOX -> CentOS -> DOCKER -> NGINX--- 1316
 -----------------------------------------------------------------
 
 Base OS: MacOSX Sierra
